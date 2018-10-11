@@ -2,6 +2,7 @@
   <section class="hero red-background is-fullheight is-bold">
     <div id="hero-body" class="hero-body">
       <div class="container has-text-centered">
+        <span id="audio"></span>
         <img src="../assets/logo_index.png">
         <!--  THE TIMER NUMBERS  -->
         <div id="timer">
@@ -82,7 +83,12 @@ export default {
       if(this.totalTime > 0) {
         this.totalTime--;
       } else {
+        // const audio = new Audio('../src/assets/Boxing_Bell.mp3');
+        // audio.srcObject = stream;
+        // audio.crossOrigin = 'anonymous';
+        // audio.play();
         clearInterval(this.timer);
+        document.getElementById('audio').innerHTML += '<audio id="player" autoplay><source src="../assets/Boxing_Bell.wav"><source src="../assets/Boxing_Bell.mp3"></audio>';
       }
     }
   },

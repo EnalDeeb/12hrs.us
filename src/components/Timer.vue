@@ -70,7 +70,7 @@ export default {
       this.resetButton = true;
     },
     resetTimer: function() {
-      this.totalTime = (25 * 60);
+      this.totalTime = (12 * 60);
       clearInterval(this.timer);
       this.timer = null;
       this.resetButton = false;

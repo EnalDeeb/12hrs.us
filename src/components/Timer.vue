@@ -54,7 +54,7 @@ export default {
   data: () => {
     return {
       timer: null,
-      totalTime: (1),
+      totalTime: (12 * 60),
       resetButton: false,
       title: "Let the countdown begin!!"
     }

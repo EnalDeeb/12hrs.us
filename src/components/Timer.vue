@@ -66,7 +66,7 @@ export default {
       this.resetButton = true;
       const context = new AudioContext();
       window.bell = new Howl({
-        src: ['../assets/boxing_bell.mp3']
+        src: ['../boxing_bell.mp3']
       });
     },
     stopTimer: function() {

@@ -2,6 +2,7 @@
   <section class="hero is-danger is-fullheight is-bold">
     <div id="hero-body" class="hero-body">
       <div class="container has-text-centered">
+        <img src="../assets/logo_index.png">
         <!--  THE TIMER NUMBERS  -->
         <div id="timer">
           <span id="minutes">{{ minutes }}</span>
@@ -16,7 +17,8 @@
               class="button is-dark is-large"
               v-if="!timer"
               @click="startTimer">
-            <i class="fas fa-play"></i>
+            <!--<i class="fas fa-play"></i>-->
+            Start
           </button>
           <!--     Pause Timer -->
           <button
@@ -24,7 +26,8 @@
               class="button is-dark is-large"
               v-if="timer"
               @click="stopTimer">
-            <i class="fas fa-pause"></i>
+            <!--<i class="fas fa-pause"></i>-->
+            Pause
           </button>
           <!--     Restart Timer -->
           <button
@@ -32,7 +35,8 @@
               class="button is-dark is-large"
               v-if="resetButton"
               @click="resetTimer">
-            <i class="fas fa-undo"></i>
+            <!--<i class="fas fa-undo"></i>-->
+            Reset
           </button>
         </div>
       </div>
@@ -96,5 +100,9 @@ export default {
   font-size: 200px;
   line-height: 1;
   margin-bottom: 40px;
+}
+
+button {
+  margin: 0px 3px;
 }
 </style>

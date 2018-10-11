@@ -53,7 +53,7 @@ export default {
   data: () => {
     return {
       timer: null,
-      totalTime: (12 * 60),
+      totalTime: (4),
       resetButton: false,
       title: "Let the countdown begin!!"
     }
@@ -79,7 +79,11 @@ export default {
       return (time < 10 ? '0' : '') + time;
     },
     countdown: function() {
-      this.totalTime--;
+      if(this.totalTime > 0) {
+        this.totalTime--;
+      } else {
+        clearInterval(this.timer);
+      }
     }
   },
   // ========================

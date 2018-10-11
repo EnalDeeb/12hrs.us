@@ -1,5 +1,5 @@
 <template>
-  <section class="hero is-danger is-fullheight is-bold">
+  <section class="hero red-background is-fullheight is-bold">
     <div id="hero-body" class="hero-body">
       <div class="container has-text-centered">
         <img src="../assets/logo_index.png">
@@ -14,7 +14,7 @@
           <!--     Start TImer -->
           <button
               id="start"
-              class="button is-dark is-large"
+              class="button is-dark"
               v-if="!timer"
               @click="startTimer">
             <!--<i class="fas fa-play"></i>-->
@@ -23,7 +23,7 @@
           <!--     Pause Timer -->
           <button
               id="stop"
-              class="button is-dark is-large"
+              class="button is-dark"
               v-if="timer"
               @click="stopTimer">
             <!--<i class="fas fa-pause"></i>-->
@@ -32,7 +32,7 @@
           <!--     Restart Timer -->
           <button
               id="reset"
-              class="button is-dark is-large"
+              class="button is-dark"
               v-if="resetButton"
               @click="resetTimer">
             <!--<i class="fas fa-undo"></i>-->
@@ -101,12 +101,22 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 #timer {
-  font-size: 200px;
+  font-size: 400px;
   line-height: 1;
   margin-bottom: 40px;
 }
 
 button {
   margin: 0px 3px;
+  font-size: 30px;
+}
+
+img {
+  height: 300px;
+}
+
+.red-background {
+  background-color: red;
+  color: #FFF;
 }
 </style>

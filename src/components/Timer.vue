@@ -54,7 +54,7 @@ export default {
   data: () => {
     return {
       timer: null,
-      totalTime: (4),
+      totalTime: (1),
       resetButton: false,
       title: "Let the countdown begin!!"
     }
@@ -64,6 +64,10 @@ export default {
     startTimer: function() {
       this.timer = setInterval(() => this.countdown(), 1000);
       this.resetButton = true;
+      const context = new AudioContext();
+      window.bell = new Howl({
+        src: ['../assets/boxing_bell.mp3']
+      });
     },
     stopTimer: function() {
       clearInterval(this.timer);
@@ -88,7 +92,8 @@ export default {
         // audio.crossOrigin = 'anonymous';
         // audio.play();
         clearInterval(this.timer);
-        document.getElementById('audio').innerHTML += '<audio id="player" autoplay><source src="../assets/Boxing_Bell.wav"><source src="../assets/Boxing_Bell.mp3"></audio>';
+        // document.getElementById('audio').innerHTML += '<audio id="player" autoplay><source src="../assets/Boxing_Bell.wav"><source src="../assets/Boxing_Bell.mp3"></audio>';
+        console.log(window.bell.play());
       }
     }
   },

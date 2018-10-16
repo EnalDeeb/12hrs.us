@@ -50,6 +50,8 @@
 </template>
 
 <script>
+import {Howl} from 'howler';
+
 export default {
   name: 'Timer',
   props: {
@@ -68,7 +70,6 @@ export default {
     startTimer: function() {
       this.timer = setInterval(() => this.countdown(), 1000);
       this.resetButton = true;
-      const context = new AudioContext();
       window.bell = new Howl({
         src: ['../boxing_bell.mp3']
       });

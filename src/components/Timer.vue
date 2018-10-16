@@ -1,16 +1,20 @@
 <template>
-  <section class="hero red-background is-fullheight is-bold">
-    <div id="hero-body" class="hero-body">
-      <div class="container has-text-centered">
-        <span id="audio"></span>
-        <img src="../assets/logo_index.png">
-        <!--  THE TIMER NUMBERS  -->
+  <section class="red-background">
+    <div class="container has-text-centered mycontainer">
+      <span id="audio"></span>
+      <section class="logo-section">
+          <img id="logo" src="../assets/logo_index.png">
+      </section>
+      <!--  THE TIMER NUMBERS  -->
+      <section class="timer-section">
         <div id="timer">
           <span id="minutes">{{ minutes }}</span>
           <span id="middle">:</span>
           <span id="seconds">{{ seconds }}</span>
         </div>
-        <!--  THE BUTTONS  -->
+      </section>
+      <!--  THE BUTTONS  -->
+      <section class="button-section">
         <div id="buttons">
           <!--     Start TImer -->
           <button
@@ -40,7 +44,7 @@
             Reset
           </button>
         </div>
-      </div>
+      </section>
     </div>
   </section>
 </template>
@@ -87,13 +91,8 @@ export default {
       if(this.totalTime > 0) {
         this.totalTime--;
       } else {
-        // const audio = new Audio('../src/assets/Boxing_Bell.mp3');
-        // audio.srcObject = stream;
-        // audio.crossOrigin = 'anonymous';
-        // audio.play();
         clearInterval(this.timer);
-        // document.getElementById('audio').innerHTML += '<audio id="player" autoplay><source src="../assets/Boxing_Bell.wav"><source src="../assets/Boxing_Bell.mp3"></audio>';
-        console.log(window.bell.play());
+        window.bell.play();
       }
     }
   },
@@ -111,23 +110,43 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-#timer {
-  font-size: 400px;
-  line-height: 1;
-  margin-bottom: 40px;
-}
+  .mycontainer {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    padding-top: 5vh;
+  }
+  #logo {
+    height: 20vh;
+  }
 
-button {
-  margin: 0px 3px;
-  font-size: 30px;
-}
+  #timer {
+    font-size: 26vw;
+  }
+  .timer-section {
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+  }
 
-img {
-  height: 300px;
-}
+  #buttons {
+    height: 25vmin;
+    display: flex;
+    align-items: center;
+  }
+  #buttons button {
+    margin: 0px 3px;
+    font-size: 30px;
+  }
 
-.red-background {
-  background-color: red;
-  color: #FFF;
-}
+  .button-section {
+    display: flex;
+    justify-content: center;
+  }
+
+  .red-background {
+    background-color: red;
+    color: #FFF;
+  }
 </style>

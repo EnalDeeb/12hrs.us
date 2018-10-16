@@ -3,7 +3,10 @@
     <div class="container has-text-centered mycontainer">
       <span id="audio"></span>
       <section class="logo-section">
-          <img id="logo" src="../assets/logo_index.png">
+          <img
+                  id="logo"
+                  src="../assets/logo_index.png"
+                  @click="ringBell">
       </section>
       <!--  THE TIMER NUMBERS  -->
       <section class="timer-section">
@@ -51,6 +54,9 @@
 
 <script>
 import {Howl} from 'howler';
+window.bell = new Howl({
+  src: ['../boxing_bell.mp3']
+});
 
 export default {
   name: 'Timer',
@@ -70,9 +76,6 @@ export default {
     startTimer: function() {
       this.timer = setInterval(() => this.countdown(), 1000);
       this.resetButton = true;
-      window.bell = new Howl({
-        src: ['../boxing_bell.mp3']
-      });
     },
     stopTimer: function() {
       clearInterval(this.timer);
@@ -95,6 +98,9 @@ export default {
         clearInterval(this.timer);
         window.bell.play();
       }
+    },
+    ringBell: function() {
+      window.bell.play();
     }
   },
   // ========================

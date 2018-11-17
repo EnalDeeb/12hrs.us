@@ -25,8 +25,7 @@
               class="button is-dark"
               v-if="!timer"
               @click="startTimer">
-            <!--<i class="fas fa-play"></i>-->
-            Start
+            <font-awesome-icon icon="play" />
           </button>
           <!--     Pause Timer -->
           <button
@@ -34,8 +33,7 @@
               class="button is-dark"
               v-if="timer"
               @click="stopTimer">
-            <!--<i class="fas fa-pause"></i>-->
-            Pause
+            <font-awesome-icon icon="pause" />
           </button>
           <!--     Restart Timer -->
           <button
@@ -43,8 +41,7 @@
               class="button is-dark"
               v-if="resetButton"
               @click="resetTimer">
-            <!--<i class="fas fa-undo"></i>-->
-            Reset
+            <font-awesome-icon icon="undo" />
           </button>
         </div>
       </section>

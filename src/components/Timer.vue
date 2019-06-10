@@ -50,6 +50,8 @@
 </template>
 
 <script>
+let seconds = !!process.env.VUE_APP_SECONDS ? process.env.VUE_APP_SECONDS : 12 * 60
+
 import {Howl} from 'howler';
 window.bell = new Howl({
   src: ['../boxing_bell.mp3']
@@ -63,7 +65,7 @@ export default {
   data: () => {
     return {
       timer: null,
-      totalTime: (12 * 60),
+      totalTime: (seconds),
       resetButton: false,
       title: "Let the countdown begin!!"
     }
@@ -80,7 +82,7 @@ export default {
       this.resetButton = true;
     },
     resetTimer: function() {
-      this.totalTime = (12 * 60);
+      this.totalTime = (seconds);
       clearInterval(this.timer);
       this.timer = null;
       this.resetButton = false;

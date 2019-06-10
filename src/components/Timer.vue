@@ -54,7 +54,7 @@ let seconds = !!process.env.VUE_APP_SECONDS ? process.env.VUE_APP_SECONDS : 12 *
 
 import {Howl} from 'howler';
 window.bell = new Howl({
-  src: ['../boxing_bell.mp3']
+  src: ['../Trailer.mp3']
 });
 
 export default {
